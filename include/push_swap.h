@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/23 13:41:09 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/23 14:02:17 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_push_swap
 # define INVALID_CHAR			"Some arguments aren't integers\n"
 # define ERROR_OVERFLOW			"Some arguments are bigger than an integer\n"
 # define ERROR_UNDERFLOW		"Some arguments are smaller than an integer\n"
+# define ERROR_DUPLICATE		"There are duplicates\n"
 
 /*
 ** push_swap.c
