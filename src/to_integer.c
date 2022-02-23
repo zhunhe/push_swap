@@ -6,14 +6,14 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:23:56 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/23 13:44:30 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/23 13:56:05 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
 #include "push_swap.h"
 
-int	ft_atoi(t_push_swap *ps, const char *s)
+static int	ft_atoi(t_push_swap *ps, const char *s)
 {
 	long long	ret;
 	int			sign;
