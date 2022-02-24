@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/23 14:02:17 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/24 12:35:44 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ typedef struct s_push_swap
 {
 	int		count;
 	int		*nums;
+	int		*sorted;
+	int		*tmp;
 }	t_push_swap;
 
 # define PLEASE_INPUT_NUMBERS	"Please input numbers\n"
