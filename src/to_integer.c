@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:23:56 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/24 19:01:09 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/24 19:08:05 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static void	merge(t_push_swap *ps, int st, int en)
 		else
 			ps->tmp[i] = ps->sorted[r++];
 	}
-	i = -1;
+	i = st - 1;
 	while (++i < en)
 		ps->sorted[i] = ps->tmp[i];
 }
