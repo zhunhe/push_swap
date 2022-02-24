@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:23:56 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/24 18:47:32 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/24 19:01:09 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,17 @@ static void	check_duplicate(t_push_swap *ps)
 
 static void	merge(t_push_swap *ps, int st, int en)
 {
-	int mid = (st + en) / 2;
-	int l = st;
-	int r = mid;
-	for (int i = st; i < en; i++) {
+	int	mid;
+	int	l;
+	int	r;
+	int	i;
+
+	mid = (st + en) / 2;
+	l = st;
+	r = mid;
+	i = st - 1;
+	while (++i < en)
+	{
 		if (r == en)
 			ps->tmp[i] = ps->sorted[l++];
 		else if (l == mid)
@@ -65,15 +72,18 @@ static void	merge(t_push_swap *ps, int st, int en)
 		else
 			ps->tmp[i] = ps->sorted[r++];
 	}
-	for (int i = st; i < en; i++)
+	i = -1;
+	while (++i < en)
 		ps->sorted[i] = ps->tmp[i];
 }
 
 static void	merge_sort(t_push_swap *ps, int st, int en)
 {
+	int	mid;
+
 	if (en - st == 1)
-		return;
-	int mid = (st + en) / 2;
+		return ;
+	mid = (st + en) / 2;
 	merge_sort(ps, st, mid);
 	merge_sort(ps, mid, en);
 	merge(ps, st, en);
