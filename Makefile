@@ -6,7 +6,7 @@
 #    By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:09:06 by juhur             #+#    #+#              #
-#    Updated: 2022/02/25 15:50:47 by juhur            ###   ########.fr        #
+#    Updated: 2022/02/25 18:00:12 by juhur            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRCS = $(addprefix $(SRC_DIR)/, \
 	to_integer.c \
 	swap.c \
 	push.c \
+	rotate.c \
 )
 
 OBJS = $(SRCS:.c=.o)
