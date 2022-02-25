@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:53:45 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/25 15:11:38 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/25 15:24:24 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ static void	init_push_swap(t_push_swap *ps, int count)
 		if (ps->nums[i] == NULL || ps->tmp[i] == NULL)
 			quit_push_swap(ps, MALLOC_ERROR);
 	}
-	ps->top_a = ps->count;
-	ps->top_b = 0;
+	ps->top_a = ps->count - 1;
+	ps->top_b = -1;
 }
 
 void	push_swap(int count, char **nums)
