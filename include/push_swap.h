@@ -6,12 +6,14 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/25 15:06:21 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/25 15:38:13 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# include <stdbool.h>
 
 typedef struct s_push_swap
 {
@@ -47,4 +49,10 @@ int		ft_strlen(const char *s);
 ** to_integer.c
 */
 void	to_integer(t_push_swap *ps, char **nums);
+/*
+** swap.c
+*/
+bool	sa(t_push_swap *ps);
+bool	sb(t_push_swap *ps);
+bool	ss(t_push_swap *ps);
 #endif
