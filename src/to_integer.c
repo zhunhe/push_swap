@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:23:56 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/25 15:05:26 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/25 15:31:04 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ static void	merge_sort(t_push_swap *ps, int st, int en)
 void	to_integer(t_push_swap *ps, char **nums)
 {
 	int	i;
-	int	tmp;
 
 	i = -1;
 	while (++i < ps->count)
@@ -108,8 +107,8 @@ void	to_integer(t_push_swap *ps, char **nums)
 	i = -1;
 	while (++i < ps->count / 2)
 	{
-		tmp = ps->stack_a[i];
-		ps->stack_a[i] = ps->stack_a[ps->count - 1 - i];
-		ps->stack_a[ps->count - 1 - i] = tmp;
+		ps->stack_a[i] ^= ps->stack_a[ps->count - 1 - i];
+		ps->stack_a[ps->count - 1 - i] ^= ps->stack_a[i];
+		ps->stack_a[i] ^= ps->stack_a[ps->count - 1 - i];
 	}
 }
