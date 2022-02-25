@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/24 12:35:44 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/25 15:06:21 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@
 typedef struct s_push_swap
 {
 	int		count;
-	int		*nums;
-	int		*sorted;
-	int		*tmp;
+	int		**nums;
+	int		**tmp;
+	int		*stack_a;
+	int		*stack_b;
+	int		top_a;
+	int		top_b;
 }	t_push_swap;
 
 # define PLEASE_INPUT_NUMBERS	"Please input numbers\n"
@@ -27,6 +30,9 @@ typedef struct s_push_swap
 # define ERROR_OVERFLOW			"Some arguments are bigger than an integer\n"
 # define ERROR_UNDERFLOW		"Some arguments are smaller than an integer\n"
 # define ERROR_DUPLICATE		"There are duplicates\n"
+
+# define NUMBER		0
+# define ORDER		1
 
 /*
 ** push_swap.c

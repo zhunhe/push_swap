@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:23:56 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/24 19:18:20 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/25 15:05:26 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	check_duplicate(t_push_swap *ps)
 
 	i = -1;
 	while (++i < ps->count - 1)
-		if (ps->sorted[i] == ps->sorted[i + 1])
+		if (ps->nums[i] == ps->nums[i + 1])
 			quit_push_swap(ps, ERROR_DUPLICATE);
 }
 
@@ -64,17 +64,17 @@ static void	merge(t_push_swap *ps, int st, int en)
 	while (++i < en)
 	{
 		if (r == en)
-			ps->tmp[i] = ps->sorted[l++];
+			ps->tmp[i] = ps->nums[l++];
 		else if (l == mid)
-			ps->tmp[i] = ps->sorted[r++];
-		else if (ps->sorted[l] <= ps->sorted[r])
-			ps->tmp[i] = ps->sorted[l++];
+			ps->tmp[i] = ps->nums[r++];
+		else if (ps->nums[l][NUMBER] <= ps->nums[r][NUMBER])
+			ps->tmp[i] = ps->nums[l++];
 		else
-			ps->tmp[i] = ps->sorted[r++];
+			ps->tmp[i] = ps->nums[r++];
 	}
 	i = st - 1;
 	while (++i < en)
-		ps->sorted[i] = ps->tmp[i];
+		ps->nums[i] = ps->tmp[i];
 }
 
 static void	merge_sort(t_push_swap *ps, int st, int en)
@@ -92,22 +92,24 @@ static void	merge_sort(t_push_swap *ps, int st, int en)
 void	to_integer(t_push_swap *ps, char **nums)
 {
 	int	i;
-	int	j;
+	int	tmp;
 
 	i = -1;
 	while (++i < ps->count)
 	{
-		ps->nums[i] = ft_atoi(ps, nums[i]);
-		ps->sorted[i] = ps->nums[i];
-	}	
+		ps->nums[i][0] = ft_atoi(ps, nums[i]);
+		ps->nums[i][1] = i;
+	}
 	merge_sort(ps, 0, ps->count);
 	check_duplicate(ps);
 	i = -1;
 	while (++i < ps->count)
+		ps->stack_a[ps->nums[i][ORDER]] = i + 1;
+	i = -1;
+	while (++i < ps->count / 2)
 	{
-		j = -1;
-		while (++j < ps->count)
-			if (ps->sorted[i] == ps->nums[j])
-				ps->nums[j] = i + 1;
+		tmp = ps->stack_a[i];
+		ps->stack_a[i] = ps->stack_a[ps->count - 1 - i];
+		ps->stack_a[ps->count - 1 - i] = tmp;
 	}
 }
