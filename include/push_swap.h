@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/25 15:38:13 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/25 15:51:23 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,9 @@ void	to_integer(t_push_swap *ps, char **nums);
 bool	sa(t_push_swap *ps);
 bool	sb(t_push_swap *ps);
 bool	ss(t_push_swap *ps);
+/*
+** push.c
+*/
+bool	pa(t_push_swap *ps);
+bool	pb(t_push_swap *ps);
 #endif
