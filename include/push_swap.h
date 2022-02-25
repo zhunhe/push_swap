@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/25 17:54:35 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/25 18:21:03 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,10 @@ bool	pb(t_push_swap *ps);
 bool	ra(t_push_swap *ps);
 bool	rb(t_push_swap *ps);
 bool	rr(t_push_swap *ps);
+/*
+** reverse_rotate.c
+*/
+bool	rra(t_push_swap *ps);
+bool	rrb(t_push_swap *ps);
+bool	rrr(t_push_swap *ps);
 #endif
