@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:23:56 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/25 15:31:04 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/25 17:44:22 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	check_duplicate(t_push_swap *ps)
 
 	i = -1;
 	while (++i < ps->count - 1)
-		if (ps->nums[i] == ps->nums[i + 1])
+		if (ps->nums[i][NUMBER] == ps->nums[i + 1][NUMBER])
 			quit_push_swap(ps, ERROR_DUPLICATE);
 }
 
@@ -64,17 +64,32 @@ static void	merge(t_push_swap *ps, int st, int en)
 	while (++i < en)
 	{
 		if (r == en)
-			ps->tmp[i] = ps->nums[l++];
+		{
+			ps->tmp[i][NUMBER] = ps->nums[l][NUMBER];
+			ps->tmp[i][ORDER] = ps->nums[l++][ORDER];
+		}
 		else if (l == mid)
-			ps->tmp[i] = ps->nums[r++];
+		{
+			ps->tmp[i][NUMBER] = ps->nums[r][NUMBER];
+			ps->tmp[i][ORDER] = ps->nums[r++][ORDER];
+		}
 		else if (ps->nums[l][NUMBER] <= ps->nums[r][NUMBER])
-			ps->tmp[i] = ps->nums[l++];
+		{
+			ps->tmp[i][NUMBER] = ps->nums[l][NUMBER];
+			ps->tmp[i][ORDER] = ps->nums[l++][ORDER];
+		}
 		else
-			ps->tmp[i] = ps->nums[r++];
+		{
+			ps->tmp[i][NUMBER] = ps->nums[r][NUMBER];
+			ps->tmp[i][ORDER] = ps->nums[r++][ORDER];
+		}
 	}
 	i = st - 1;
 	while (++i < en)
-		ps->nums[i] = ps->tmp[i];
+	{
+		ps->nums[i][NUMBER] = ps->tmp[i][NUMBER];
+		ps->nums[i][ORDER] = ps->tmp[i][ORDER];
+	}
 }
 
 static void	merge_sort(t_push_swap *ps, int st, int en)
