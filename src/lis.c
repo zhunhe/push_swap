@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 11:49:50 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 15:17:34 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 16:27:55 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	get_len(int *array, int max)
 	int	idx;
 
 	i = -1;
-	idx = max - 1;
+	idx = max;
 	while (++i < max)
 	{
 		if (array[i] == 0)
