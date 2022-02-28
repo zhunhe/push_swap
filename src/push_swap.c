@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:53:45 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 12:46:48 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 14:56:58 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,10 @@ void	quit_push_swap(t_push_swap *ps, char *str)
 	{
 		free_2d_array(ps, (void **)ps->nums);
 		free_2d_array(ps, (void **)ps->tmp);
+		free_2d_array(ps, (void **)ps->lis.arr);
 		free_1d_array((void *)ps->a.stack);
 		free_1d_array((void *)ps->b.stack);
+		free_1d_array((void *)ps->lis.dp);
 	}
 	if (str != NULL)
 		write(1, str, ft_strlen(str));
