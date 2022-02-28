@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/01 00:24:20 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/01 00:35:18 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,5 @@ bool	rrr(t_push_swap *ps);
 /*
 ** ft_split.c
 */
-char	**ft_split(char const *s, char c, int w_cnt);
+char	**ft_split(char const *s, int w_cnt);
 #endif

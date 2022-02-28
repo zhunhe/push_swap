@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 23:58:39 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/01 00:16:58 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/01 00:35:10 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	get_word_len(char const *s, char c)
 	return (w_len);
 }
 
-static char	**ft_split_free(char **ret, int i)
+static void	ft_split_free(char **ret, int i)
 {
 	while (i >= 0)
 	{
@@ -33,7 +33,7 @@ static char	**ft_split_free(char **ret, int i)
 	}
 	free(ret);
 	ret = NULL;
-	return (NULL);
+	quit_push_swap(NULL, ERROR);
 }
 
 static char	**ft_split_main(char const *s, char c, char **ret, int w_cnt)
@@ -50,7 +50,7 @@ static char	**ft_split_main(char const *s, char c, char **ret, int w_cnt)
 		w_len = get_word_len(s, c);
 		ret[i] = (char *)malloc(sizeof(char) * (w_len + 1));
 		if (ret[i] == NULL)
-			return (ft_split_free(ret, i));
+			ft_split_free(ret, i);
 		j = -1;
 		while (++j < w_len)
 			ret[i][j] = *(s++);
@@ -65,7 +65,7 @@ static char	**ft_split_main(char const *s, char c, char **ret, int w_cnt)
 ** by splitting ’s’ using the character ’c’ as a delimiter.
 ** The array must be ended by a NULL pointer.
 */
-char	**ft_split(char const *s, char c, int w_cnt)
+char	**ft_split(char const *s, int w_cnt)
 {
 	char	**ret;
 
@@ -73,6 +73,6 @@ char	**ft_split(char const *s, char c, int w_cnt)
 		return (NULL);
 	ret = (char **)malloc(sizeof(char *) * w_cnt);
 	if (ret == NULL)
-		return (NULL);
-	return (ft_split_main(s, c, ret, w_cnt));
+		quit_push_swap(NULL, ERROR);
+	return (ft_split_main(s, ' ', ret, w_cnt));
 }
