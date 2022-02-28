@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 15:21:18 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 14:49:54 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 15:18:42 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ bool	sb(t_push_swap *ps)
 {
 	if (ps->b.top < 1)
 		return (false);
-	swap(ps->b.stack[ps->b.top], ps->b.stack[ps->b.top - 1]);
+	swap(&ps->b.stack[ps->b.top], &ps->b.stack[ps->b.top - 1]);
 	return (true);
 }
 
