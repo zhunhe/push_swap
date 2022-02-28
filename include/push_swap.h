@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/01 00:01:21 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/01 00:24:20 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,7 @@ typedef struct s_push_swap
 	t_lis	lis;
 }	t_push_swap;
 
-# define PLEASE_INPUT_NUMBERS	"Please input numbers\n"
-# define MALLOC_ERROR			"Malloc error\n"
-# define INVALID_CHAR			"Some arguments aren't integers\n"
-# define ERROR_OVERFLOW			"Some arguments are bigger than an integer\n"
-# define ERROR_UNDERFLOW		"Some arguments are smaller than an integer\n"
-# define ERROR_DUPLICATE		"There are duplicates\n"
+# define ERROR		"Error\n"
 
 # define NUMBER		0
 # define ORDER		1

@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:11:41 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 18:46:47 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/01 00:25:56 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ void	init_push_swap(t_push_swap *ps, int count)
 	ps->lis.nums = (int *)malloc(sizeof(int) * ps->count);
 	if (ps->nums == NULL || ps->tmp == NULL || ps->a.stack == NULL \
 		|| ps->b.stack == NULL || ps->lis.nums == NULL)
-		quit_push_swap(ps, MALLOC_ERROR);
+		quit_push_swap(ps, ERROR);
 	i = -1;
 	while (++i < ps->count)
 	{
 		ps->nums[i] = (int *)malloc(sizeof(int) * 2);
 		ps->tmp[i] = (int *)malloc(sizeof(int) * ps->count);
 		if (ps->nums[i] == NULL || ps->tmp[i] == NULL)
-			quit_push_swap(ps, MALLOC_ERROR);
+			quit_push_swap(ps, ERROR);
 	}
 	ps->a.top = ps->count - 1;
 	ps->b.top = -1;

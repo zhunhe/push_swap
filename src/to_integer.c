@@ -6,10 +6,11 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:23:56 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 22:49:02 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/01 00:28:37 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <limits.h>
 #include "push_swap.h"
 
@@ -19,7 +20,7 @@ static int	ft_atoi(t_push_swap *ps, const char *s)
 	int			sign;
 
 	if (!*s)
-		quit_push_swap(ps, INVALID_CHAR);
+		quit_push_swap(ps, ERROR);
 	if (*s == '-')
 	{
 		sign = -1;
@@ -31,12 +32,10 @@ static int	ft_atoi(t_push_swap *ps, const char *s)
 	while (*s != '\0')
 	{
 		if (*s < '0' || *s > '9')
-			quit_push_swap(ps, INVALID_CHAR);
+			quit_push_swap(ps, ERROR);
 		ret = ret * 10 + *s - '0';
-		if (sign * ret > INT_MAX)
-			quit_push_swap(ps, ERROR_OVERFLOW);
-		else if (sign * ret < INT_MIN)
-			quit_push_swap(ps, ERROR_UNDERFLOW);
+		if (sign * ret > INT_MAX || sign * ret < INT_MIN)
+			quit_push_swap(ps, ERROR);
 		++s;
 	}
 	return (ret);
@@ -49,7 +48,7 @@ static void	check_duplicate(t_push_swap *ps)
 	i = -1;
 	while (++i < ps->count - 1)
 		if (ps->nums[i][NUMBER] == ps->nums[i + 1][NUMBER])
-			quit_push_swap(ps, ERROR_DUPLICATE);
+			quit_push_swap(ps, ERROR);
 }
 
 static void	merge(t_push_swap *ps, int st, int en)

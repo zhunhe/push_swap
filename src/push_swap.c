@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:53:45 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/01 00:13:05 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/01 00:26:40 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,11 @@ void	push_swap(int count, char **nums, bool one_string)
 
 	if (one_string)
 		count = count_word(*nums);
-	if (count == 1)
+	if (count < 2)
 		return ;
 	nums = ft_split(*nums, ' ', count);
 	if (nums == NULL)
-		quit_push_swap(&ps, MALLOC_ERROR);
+		quit_push_swap(&ps, ERROR);
 	init_push_swap(&ps, count);
 	to_integer(&ps, nums);
 	if (one_string)
