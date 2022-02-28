@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 15:12:50 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 17:14:37 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int		ft_strlen(const char *s);
 void	swap(int *a, int *b);
 void	deep_copy(int *dst, int *src, int len);
 void	reverse(int *arr, int len);
+void	println(char *s);
 /*
 ** init.c
 */
@@ -76,8 +77,8 @@ void	lis(t_push_swap *ps);
 /*
 ** swap.c
 */
-bool	sa(t_push_swap *ps);
-bool	sb(t_push_swap *ps);
+bool	sa(t_push_swap *ps, bool prints_func);
+bool	sb(t_push_swap *ps, bool prints_func);
 bool	ss(t_push_swap *ps);
 /*
 ** push.c
@@ -87,13 +88,13 @@ bool	pb(t_push_swap *ps);
 /*
 ** rotate.c
 */
-bool	ra(t_push_swap *ps);
-bool	rb(t_push_swap *ps);
+bool	ra(t_push_swap *ps, bool prints_func);
+bool	rb(t_push_swap *ps, bool prints_func);
 bool	rr(t_push_swap *ps);
 /*
 ** reverse_rotate.c
 */
-bool	rra(t_push_swap *ps);
-bool	rrb(t_push_swap *ps);
+bool	rra(t_push_swap *ps, bool prints_func);
+bool	rrb(t_push_swap *ps, bool prints_func);
 bool	rrr(t_push_swap *ps);
 #endif

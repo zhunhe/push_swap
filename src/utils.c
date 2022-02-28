@@ -6,9 +6,11 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:02:56 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 16:18:29 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 17:07:30 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 int	ft_strlen(const char *s)
 {
@@ -43,4 +45,10 @@ void	reverse(int *arr, int len)
 	i = -1;
 	while (++i < len / 2)
 		swap(&arr[i], &arr[len - 1 - i]);
+}
+
+void	println(char *s)
+{
+	write(1, s, ft_strlen(s));
+	write(1, "\n", 1);
 }

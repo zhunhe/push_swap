@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 15:47:23 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 12:19:17 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 17:10:35 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ bool	pa(t_push_swap *ps)
 		return (false);
 	ps->a.stack[++ps->a.top] = ps->b.stack[ps->b.top];
 	ps->b.stack[ps->b.top--] = 0;
+	println((char *)__func__);
 	return (true);
 }
 
@@ -27,5 +28,6 @@ bool	pb(t_push_swap *ps)
 		return (false);
 	ps->b.stack[++ps->b.top] = ps->a.stack[ps->a.top];
 	ps->a.stack[ps->a.top--] = 0;
+	println((char *)__func__);
 	return (true);
 }
