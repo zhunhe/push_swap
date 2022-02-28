@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:23:56 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 15:02:53 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 15:15:32 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,5 @@ void	to_integer(t_push_swap *ps, char **nums)
 	i = -1;
 	while (++i < ps->count)
 		ps->a.stack[ps->nums[i][ORDER]] = i + 1;
-	i = -1;
-	while (++i < ps->count / 2)
-		swap(ps->a.stack[i], ps->a.stack[ps->count - 1 - i]);
+	reverse(ps->a.stack, ps->count);
 }
