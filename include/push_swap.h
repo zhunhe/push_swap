@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 18:05:22 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 18:42:54 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ typedef struct s_stack
 
 typedef struct s_lis
 {
-	int	**arr;
-	int	*dp;
-	int	idx;
+	int	*nums;
 	int	len;
 	int	to_b_count;
 }	t_lis;
@@ -65,6 +63,7 @@ void	println(char *s);
 /*
 ** init.c
 */
+void	set_zero(int *array, int count);
 void	init_push_swap(t_push_swap *ps, int count);
 /*
 ** quit.c

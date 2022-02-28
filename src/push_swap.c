@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:53:45 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 18:09:19 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 18:39:54 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ static void	a_to_b(t_push_swap *ps)
 	i = 0;
 	while (ps->lis.to_b_count)
 	{
-		if (i < ps->lis.len && \
-			ps->a.stack[ps->a.top] == ps->lis.arr[ps->lis.idx][i])
+		if (i < ps->lis.len && ps->a.stack[ps->a.top] == ps->lis.nums[i])
 		{
 			ra(ps, true);
 			if (i < ps->lis.len)

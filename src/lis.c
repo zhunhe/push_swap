@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 11:49:50 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 18:06:46 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 18:43:29 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,26 @@ static int	get_len(int *array, int max)
 	return (idx);
 }
 
-static void	set_lis_idx(t_push_swap *ps)
+static void	set_lis_data(t_push_swap *ps)
 {
 	int	i;
+	int	idx;
 	int	max;
 
 	i = -1;
 	max = 0;
 	while (++i < ps->count)
 	{
-		if (ps->lis.dp[i] > max)
+		if (ps->lis.nums[i] > max)
 		{
-			max = ps->lis.dp[i];
-			ps->lis.idx = i;
+			max = ps->lis.nums[i];
+			idx = i;
 		}
 	}
+	ps->lis.len = get_len(ps->tmp[idx], ps->count);
+	deep_copy(ps->lis.nums, ps->tmp[idx], ps->lis.len);
+	reverse(ps->lis.nums, ps->lis.len);
+	ps->lis.to_b_count = ps->count - ps->lis.len;
 }
 
 void	lis(t_push_swap *ps)
@@ -55,22 +60,20 @@ void	lis(t_push_swap *ps)
 	i = -1;
 	while (++i < ps->count)
 	{
-		ps->lis.dp[i] = 1;
+		ps->lis.nums[i] = 1;
+		set_zero(ps->tmp[i], ps->count);
 		j = -1;
 		while (++j < i)
 		{
 			if (ps->a.stack[j] <= ps->a.stack[i])
 				continue ;
-			if (ps->lis.dp[j] + 1 > ps->lis.dp[i])
+			if (ps->lis.nums[j] + 1 > ps->lis.nums[i])
 			{
-				ps->lis.dp[i] = ps->lis.dp[j] + 1;
-				deep_copy(ps->lis.arr[i], ps->lis.arr[j], ps->count);
+				ps->lis.nums[i] = ps->lis.nums[j] + 1;
+				deep_copy(ps->tmp[i], ps->tmp[j], ps->count);
 			}
 		}
-		ps->lis.arr[i][get_len(ps->lis.arr[i], ps->count)] = ps->a.stack[i];
+		ps->tmp[i][get_len(ps->tmp[i], ps->count)] = ps->a.stack[i];
 	}
-	set_lis_idx(ps);
-	ps->lis.len = get_len(ps->lis.arr[ps->lis.idx], ps->count);
-	reverse(ps->lis.arr[ps->lis.idx], ps->lis.len);
-	ps->lis.to_b_count = ps->count - ps->lis.len;
+	set_lis_data(ps);
 }
