@@ -3,6 +3,5 @@ a.out
 *.o
 *.a
 *test*
-.vscode
 .idea
 push_swap
