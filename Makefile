@@ -6,7 +6,7 @@
 #    By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:09:06 by juhur             #+#    #+#              #
-#    Updated: 2022/02/28 14:42:18 by juhur            ###   ########.fr        #
+#    Updated: 2022/02/28 17:24:18 by juhur            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRCS = $(addprefix $(SRC_DIR)/, \
 	reverse_rotate.c \
 	init.c \
 	lis.c \
+	quit.c \
 )
 
 OBJS = $(SRCS:.c=.o)

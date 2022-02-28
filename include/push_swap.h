@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 17:14:37 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 17:24:04 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ typedef struct s_push_swap
 ** push_swap.c
 */
 void	push_swap(int count, char **nums);
-void	quit_push_swap(t_push_swap *ps, char *error);
 /*
 ** utils.c
 */
@@ -66,6 +65,10 @@ void	println(char *s);
 ** init.c
 */
 void	init_push_swap(t_push_swap *ps, int count);
+/*
+** quit.c
+*/
+void	quit_push_swap(t_push_swap *ps, char *error);
 /*
 ** to_integer.c
 */
