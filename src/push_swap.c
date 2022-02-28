@@ -6,10 +6,11 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:53:45 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 20:45:13 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/01 00:13:05 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include "push_swap.h"
 
 static bool	is_sorted(t_push_swap *ps)
@@ -56,12 +57,34 @@ static void	a_to_b(t_push_swap *ps)
 	}
 }
 
-void	push_swap(int count, char **nums)
+int	count_word(char *s)
+{
+	int	word_cnt;
+	int	i;
+
+	word_cnt = 0;
+	i = -1;
+	while (s[++i] != '\0')
+		if ((i == 0 || s[i - 1] == ' ') && s[i] != ' ')
+			++word_cnt;
+	return (word_cnt);
+}
+
+void	push_swap(int count, char **nums, bool one_string)
 {
 	t_push_swap	ps;
 
+	if (one_string)
+		count = count_word(*nums);
+	if (count == 1)
+		return ;
+	nums = ft_split(*nums, ' ', count);
+	if (nums == NULL)
+		quit_push_swap(&ps, MALLOC_ERROR);
 	init_push_swap(&ps, count);
 	to_integer(&ps, nums);
+	if (one_string)
+		free_2d_array((void **)nums, ps.count);
 	align(&ps);
 	if (!is_sorted(&ps))
 	{

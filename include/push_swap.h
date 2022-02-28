@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 18:42:54 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/01 00:01:21 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef struct s_push_swap
 /*
 ** push_swap.c
 */
-void	push_swap(int count, char **nums);
+void	push_swap(int count, char **nums, bool one_string);
 /*
 ** utils.c
 */
@@ -68,6 +68,7 @@ void	init_push_swap(t_push_swap *ps, int count);
 /*
 ** quit.c
 */
+void	free_2d_array(void **ptr, int len);
 void	quit_push_swap(t_push_swap *ps, char *error);
 /*
 ** to_integer.c
@@ -100,4 +101,8 @@ bool	rr(t_push_swap *ps);
 bool	rra(t_push_swap *ps, bool prints_func);
 bool	rrb(t_push_swap *ps, bool prints_func);
 bool	rrr(t_push_swap *ps);
+/*
+** ft_split.c
+*/
+char	**ft_split(char const *s, char c, int w_cnt);
 #endif

@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:23:15 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 18:37:28 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 23:56:36 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 #include <unistd.h>
 #include "push_swap.h"
 
-static void	free_2d_array(t_push_swap *ps, void **ptr)
+void	free_2d_array(void **ptr, int len)
 {
 	int	i;
 
 	if (ptr != NULL)
 	{
 		i = -1;
-		while (++i < ps->count)
+		while (++i < len)
 		{
 			if (ptr[i])
 				free(ptr[i]);
@@ -43,8 +43,8 @@ void	quit_push_swap(t_push_swap *ps, char *str)
 {
 	if (ps != NULL)
 	{
-		free_2d_array(ps, (void **)ps->nums);
-		free_2d_array(ps, (void **)ps->tmp);
+		free_2d_array((void **)ps->nums, ps->count);
+		free_2d_array((void **)ps->tmp, ps->count);
 		free_1d_array((void *)ps->a.stack);
 		free_1d_array((void *)ps->b.stack);
 		free_1d_array((void *)ps->lis.nums);
