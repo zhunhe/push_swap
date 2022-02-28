@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:11:41 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 12:13:47 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 12:17:37 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ void	init_push_swap(t_push_swap *ps, int count)
 	ps->count = count;
 	ps->nums = (int **)malloc(sizeof(int *) * ps->count);
 	ps->tmp = (int **)malloc(sizeof(int *) * ps->count);
-	ps->stack_a = (int *)malloc(sizeof(int) * ps->count);
-	ps->stack_b = (int *)malloc(sizeof(int) * ps->count);
+	ps->a.stack = (int *)malloc(sizeof(int) * ps->count);
+	ps->b.stack = (int *)malloc(sizeof(int) * ps->count);
 	ps->dp = (int *)malloc(sizeof(int) * ps->count);
 	ps->lis = (int **)malloc(sizeof(int *) * ps->count);
-	if (ps->nums == NULL || ps->tmp == NULL || ps->stack_a == NULL \
-		|| ps->stack_b == NULL || ps->dp == NULL || ps->lis == NULL)
+	if (ps->nums == NULL || ps->tmp == NULL || ps->a.stack == NULL \
+		|| ps->b.stack == NULL || ps->dp == NULL || ps->lis == NULL)
 		quit_push_swap(ps, MALLOC_ERROR);
 	i = -1;
 	while (++i < ps->count)
@@ -36,6 +36,6 @@ void	init_push_swap(t_push_swap *ps, int count)
 		if (ps->nums[i] == NULL || ps->tmp[i] == NULL || ps->lis[i] == NULL)
 			quit_push_swap(ps, MALLOC_ERROR);
 	}
-	ps->top_a = ps->count - 1;
-	ps->top_b = -1;
+	ps->a.top = ps->count - 1;
+	ps->b.top = -1;
 }

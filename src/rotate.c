@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 17:46:44 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 12:04:02 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 12:19:41 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ bool	ra(t_push_swap *ps)
 	int	i;
 	int	tmp;
 
-	if (ps->top_a < 0)
+	if (ps->a.top < 0)
 		return (false);
-	tmp = ps->stack_a[ps->top_a];
+	tmp = ps->a.stack[ps->a.top];
 	i = -1;
-	while (++i < ps->top_a)
-		ps->stack_a[i + 1] = ps->stack_a[i];
-	ps->stack_a[0] = tmp;
+	while (++i < ps->a.top)
+		ps->a.stack[i + 1] = ps->a.stack[i];
+	ps->a.stack[0] = tmp;
 	return (true);
 }
 
@@ -32,19 +32,19 @@ bool	rb(t_push_swap *ps)
 	int	i;
 	int	tmp;
 
-	if (ps->top_b < 0)
+	if (ps->b.top < 0)
 		return (false);
-	tmp = ps->stack_b[ps->top_b];
+	tmp = ps->b.stack[ps->b.top];
 	i = -1;
-	while (++i < ps->top_b)
-		ps->stack_b[i + 1] = ps->stack_b[i];
-	ps->stack_b[0] = tmp;
+	while (++i < ps->b.top)
+		ps->b.stack[i + 1] = ps->b.stack[i];
+	ps->b.stack[0] = tmp;
 	return (true);
 }
 
 bool	rr(t_push_swap *ps)
 {
-	if (ps->top_a < 0 || ps->top_b < 0)
+	if (ps->a.top < 0 || ps->b.top < 0)
 		return (false);
 	ra(ps);
 	rb(ps);

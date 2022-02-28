@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:23:56 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/25 17:44:22 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 12:18:18 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,12 +118,12 @@ void	to_integer(t_push_swap *ps, char **nums)
 	check_duplicate(ps);
 	i = -1;
 	while (++i < ps->count)
-		ps->stack_a[ps->nums[i][ORDER]] = i + 1;
+		ps->a.stack[ps->nums[i][ORDER]] = i + 1;
 	i = -1;
 	while (++i < ps->count / 2)
 	{
-		ps->stack_a[i] ^= ps->stack_a[ps->count - 1 - i];
-		ps->stack_a[ps->count - 1 - i] ^= ps->stack_a[i];
-		ps->stack_a[i] ^= ps->stack_a[ps->count - 1 - i];
+		ps->a.stack[i] ^= ps->a.stack[ps->count - 1 - i];
+		ps->a.stack[ps->count - 1 - i] ^= ps->a.stack[i];
+		ps->a.stack[i] ^= ps->a.stack[ps->count - 1 - i];
 	}
 }
