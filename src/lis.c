@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 11:49:50 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 16:27:55 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 18:06:46 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,5 @@ void	lis(t_push_swap *ps)
 	set_lis_idx(ps);
 	ps->lis.len = get_len(ps->lis.arr[ps->lis.idx], ps->count);
 	reverse(ps->lis.arr[ps->lis.idx], ps->lis.len);
+	ps->lis.to_b_count = ps->count - ps->lis.len;
 }

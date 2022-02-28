@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 17:24:04 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 18:05:22 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_lis
 	int	*dp;
 	int	idx;
 	int	len;
+	int	to_b_count;
 }	t_lis;
 
 typedef struct s_push_swap
