@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 11:49:50 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 14:42:11 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 14:48:21 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,7 @@ static void	reverse(t_push_swap *ps)
 	len = get_len(ps->lis.arr[ps->lis.idx], ps->count);
 	i = -1;
 	while (++i < len / 2)
-	{
-		ps->lis.arr[ps->lis.idx][i] ^= ps->lis.arr[ps->lis.idx][len - 1 - i];
-		ps->lis.arr[ps->lis.idx][len - 1 - i] ^= ps->lis.arr[ps->lis.idx][i];
-		ps->lis.arr[ps->lis.idx][i] ^= ps->lis.arr[ps->lis.idx][len - 1 - i];
-	}
+		swap(ps->lis.arr[ps->lis.idx][i], ps->lis.arr[ps->lis.idx][len - 1 - i]);
 }
 
 void	lis(t_push_swap *ps)

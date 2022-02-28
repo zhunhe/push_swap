@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 14:38:40 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 14:49:47 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	quit_push_swap(t_push_swap *ps, char *error);
 ** utils.c
 */
 int		ft_strlen(const char *s);
+void	swap(int *a, int *b);
 /*
 ** init.c
 */
