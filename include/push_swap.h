@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 12:50:51 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 14:38:40 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@ typedef struct s_stack
 	int	top;
 }	t_stack;
 
+typedef struct s_lis
+{
+	int	**arr;
+	int	*dp;
+	int	idx;
+	int	len;
+}	t_lis;
+
 typedef struct s_push_swap
 {
 	int		count;
@@ -28,8 +36,7 @@ typedef struct s_push_swap
 	int		**tmp;
 	t_stack	a;
 	t_stack	b;
-	int		*dp;
-	int		**lis;
+	t_lis	lis;
 }	t_push_swap;
 
 # define PLEASE_INPUT_NUMBERS	"Please input numbers\n"
@@ -59,6 +66,10 @@ void	init_push_swap(t_push_swap *ps, int count);
 ** to_integer.c
 */
 void	to_integer(t_push_swap *ps, char **nums);
+/*
+** lis.c
+*/
+void	lis(t_push_swap *ps);
 /*
 ** swap.c
 */

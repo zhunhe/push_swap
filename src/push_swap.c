@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:53:45 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 12:17:56 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 12:46:48 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	push_swap(int count, char **nums)
 
 	init_push_swap(&ps, count);
 	to_integer(&ps, nums);
+	lis(&ps);
 }
 
 static void	free_2d_array(t_push_swap *ps, void **ptr)
