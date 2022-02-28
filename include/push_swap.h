@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/25 18:21:03 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 12:14:33 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef struct s_push_swap
 	int		*stack_b;
 	int		top_a;
 	int		top_b;
+	int		*dp;
+	int		**lis;
 }	t_push_swap;
 
 # define PLEASE_INPUT_NUMBERS	"Please input numbers\n"
@@ -45,6 +47,10 @@ void	quit_push_swap(t_push_swap *ps, char *error);
 ** utils.c
 */
 int		ft_strlen(const char *s);
+/*
+** init.c
+*/
+void	init_push_swap(t_push_swap *ps, int count);
 /*
 ** to_integer.c
 */
