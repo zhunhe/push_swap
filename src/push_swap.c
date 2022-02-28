@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:53:45 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 20:29:13 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 20:45:13 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ static bool	is_sorted(t_push_swap *ps)
 static void	align(t_push_swap *ps)
 {
 	if (ps->a.stack[ps->a.top] == ps->count)
-		ra(&ps, true);
+		ra(ps, true);
 	else if (ps->a.stack[1] == ps->count)
-		rra(&ps, true);
+		rra(ps, true);
 	if (ps->a.stack[ps->a.top] == ps->a.stack[ps->a.top - 1] + 1)
-		sa(&ps, true);
+		sa(ps, true);
 }
 
 static void	a_to_b(t_push_swap *ps)
