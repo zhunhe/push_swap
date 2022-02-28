@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:23:56 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 14:47:47 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 15:02:53 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,32 +64,17 @@ static void	merge(t_push_swap *ps, int st, int en)
 	while (++i < en)
 	{
 		if (r == en)
-		{
-			ps->tmp[i][NUMBER] = ps->nums[l][NUMBER];
-			ps->tmp[i][ORDER] = ps->nums[l++][ORDER];
-		}
+			deep_copy(ps->tmp[i], ps->nums[l++], 2);
 		else if (l == mid)
-		{
-			ps->tmp[i][NUMBER] = ps->nums[r][NUMBER];
-			ps->tmp[i][ORDER] = ps->nums[r++][ORDER];
-		}
+			deep_copy(ps->tmp[i], ps->nums[r++], 2);
 		else if (ps->nums[l][NUMBER] <= ps->nums[r][NUMBER])
-		{
-			ps->tmp[i][NUMBER] = ps->nums[l][NUMBER];
-			ps->tmp[i][ORDER] = ps->nums[l++][ORDER];
-		}
+			deep_copy(ps->tmp[i], ps->nums[l++], 2);
 		else
-		{
-			ps->tmp[i][NUMBER] = ps->nums[r][NUMBER];
-			ps->tmp[i][ORDER] = ps->nums[r++][ORDER];
-		}
+			deep_copy(ps->tmp[i], ps->nums[r++], 2);
 	}
 	i = st - 1;
 	while (++i < en)
-	{
-		ps->nums[i][NUMBER] = ps->tmp[i][NUMBER];
-		ps->nums[i][ORDER] = ps->tmp[i][ORDER];
-	}
+		deep_copy(ps->nums[i], ps->tmp[i], 2);
 }
 
 static void	merge_sort(t_push_swap *ps, int st, int en)

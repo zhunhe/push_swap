@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 11:49:50 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 14:48:21 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 15:01:01 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,6 @@ static void	set_lis_idx(t_push_swap *ps)
 			ps->lis.idx = i;
 		}
 	}
-}
-
-static void	deep_copy(int *dst, int *src, int len)
-{
-	int	i;
-
-	i = -1;
-	while (++i < len)
-		dst[i] = src[i];
 }
 
 static void	reverse(t_push_swap *ps)
