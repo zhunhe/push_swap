@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 12:17:01 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 12:50:51 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 typedef struct s_stack
 {
-	int *stack;
+	int	*stack;
 	int	top;
 }	t_stack;
 
@@ -27,7 +27,7 @@ typedef struct s_push_swap
 	int		**nums;
 	int		**tmp;
 	t_stack	a;
-	t_stack b;
+	t_stack	b;
 	int		*dp;
 	int		**lis;
 }	t_push_swap;
