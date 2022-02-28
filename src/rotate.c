@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 17:46:44 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/27 20:25:19 by juhur            ###   ########.fr       */
+/*   Updated: 2022/02/28 12:04:02 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ bool	ra(t_push_swap *ps)
 	while (++i < ps->top_a)
 		ps->stack_a[i + 1] = ps->stack_a[i];
 	ps->stack_a[0] = tmp;
-	
 	return (true);
 }
 
