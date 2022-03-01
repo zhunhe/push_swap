@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:23:56 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/01 00:28:37 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/01 14:37:58 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int	ft_atoi(t_push_swap *ps, const char *s)
 			quit_push_swap(ps, ERROR);
 		++s;
 	}
-	return (ret);
+	return (sign * ret);
 }
 
 static void	check_duplicate(t_push_swap *ps)
