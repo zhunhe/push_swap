@@ -6,14 +6,14 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:53:45 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/01 00:38:32 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/01 17:05:36 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "push_swap.h"
 
-static bool	is_sorted(t_push_swap *ps)
+bool	is_sorted(t_push_swap *ps)
 {
 	int	i;
 
@@ -34,29 +34,6 @@ static void	align(t_push_swap *ps)
 		sa(ps, true);
 }
 
-static void	a_to_b(t_push_swap *ps)
-{
-	int	i;
-
-	i = 0;
-	while (ps->lis.to_b_count)
-	{
-		if (i < ps->lis.len && ps->a.stack[ps->a.top] == ps->lis.nums[i])
-		{
-			ra(ps, true);
-			if (i < ps->lis.len)
-				i++;
-		}
-		else
-		{
-			pb(ps);
-			--ps->lis.to_b_count;
-		}
-		if (is_sorted(ps))
-			break ;
-	}
-}
-
 int	count_word(char *s)
 {
 	int	word_cnt;
@@ -68,6 +45,34 @@ int	count_word(char *s)
 		if ((i == 0 || s[i - 1] == ' ') && s[i] != ' ')
 			++word_cnt;
 	return (word_cnt);
+}
+
+void	send_1_to_top(t_push_swap *ps)
+{
+	int	i;
+	int	idx;
+	int	cnt;
+
+	i = -1;
+	while (++i < ps->a.top + 1)
+	{
+		if (ps->a.stack[i] == 1)
+			idx = i;
+	}
+	if (idx >= ps->a.top / 2)
+		cnt = ps->a.top - idx;
+	else
+		cnt = -(idx + 1);
+	while (cnt > 0)
+	{
+		ra(ps, true);
+		cnt--;
+	}
+	while (cnt < 0)
+	{
+		rra(ps, true);
+		cnt++;
+	}
 }
 
 void	push_swap(int count, char **nums, bool one_string)
@@ -88,5 +93,7 @@ void	push_swap(int count, char **nums, bool one_string)
 	{
 		lis(&ps);
 		a_to_b(&ps);
+		b_to_a(&ps);
+		send_1_to_top(&ps);
 	}
 }

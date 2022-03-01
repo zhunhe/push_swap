@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/01 00:35:18 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/01 17:37:24 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,15 @@ typedef struct s_push_swap
 # define NUMBER		0
 # define ORDER		1
 
+# define COUNT	0
+# define RR	1
+# define RA	2
+# define RB	3
+
 /*
 ** push_swap.c
 */
+bool	is_sorted(t_push_swap *ps);
 void	push_swap(int count, char **nums, bool one_string);
 /*
 ** utils.c
@@ -55,6 +61,12 @@ void	swap(int *a, int *b);
 void	deep_copy(int *dst, int *src, int len);
 void	reverse(int *arr, int len);
 void	println(char *s);
+/*
+** utils2.c
+*/
+int		min(int a, int b);
+int		max(int a, int b);
+int		abs(int val);
 /*
 ** init.c
 */
@@ -100,4 +112,12 @@ bool	rrr(t_push_swap *ps);
 ** ft_split.c
 */
 char	**ft_split(char const *s, int w_cnt);
+/*
+** a_to_b.c
+*/
+void	a_to_b(t_push_swap *ps);
+/*
+** b_to_a.c
+*/
+void	b_to_a(t_push_swap *ps);
 #endif
