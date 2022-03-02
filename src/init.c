@@ -6,21 +6,12 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:11:41 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 02:41:49 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 02:55:36 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "push_swap.h"
-
-void	set_zero(int *array, int count)
-{
-	int	i;
-
-	i = -1;
-	while (++i < count)
-		array[i] = 0;
-}
 
 void	init_push_swap(t_push_swap *ps, int count)
 {

@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:41:09 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/01 17:26:01 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 02:55:55 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static void	set_move_data(t_push_swap *ps)
 	i = -1;
 	while (++i < ps->b.top + 1)
 	{
-		set_zero(ps->tmp[i], 4);
+		fill_n(ps->tmp[i], 4, 0);
 		if (i >= ps->b.top / 2)
 			ps->tmp[i][RB] = ps->b.top - i;
 		else
