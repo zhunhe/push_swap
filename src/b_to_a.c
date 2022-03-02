@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:41:09 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 03:21:42 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 04:21:56 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ static void	move_to_a(t_push_swap *ps)
 	}
 	while (ps->tmp[idx][RR] > 0)
 	{
-		rr(ps);
+		rr(ps, 1);
 		ps->tmp[idx][RR]--;
 	}
 	while (ps->tmp[idx][RR] < 0)
@@ -109,7 +109,7 @@ static void	move_to_a(t_push_swap *ps)
 	}
 	while (ps->tmp[idx][RA] > 0)
 	{
-		ra(ps, true);
+		ra(ps, 1, true);
 		ps->tmp[idx][RA]--;
 	}
 	while (ps->tmp[idx][RA] < 0)
@@ -119,7 +119,7 @@ static void	move_to_a(t_push_swap *ps)
 	}
 	while (ps->tmp[idx][RB] > 0)
 	{
-		rb(ps, true);
+		rb(ps, 1, true);
 		ps->tmp[idx][RB]--;
 	}
 	while (ps->tmp[idx][RB] < 0)

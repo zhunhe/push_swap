@@ -6,52 +6,69 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 17:46:44 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 17:52:22 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 04:01:17 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "push_swap.h"
 
-bool	ra(t_push_swap *ps, bool prints_func)
+bool	ra(t_push_swap *ps, int count, bool prints_func)
 {
 	int	i;
-	int	tmp;
+	int	*tmp;
 
 	if (ps->a.top < 0)
 		return (false);
-	tmp = ps->a.stack[ps->a.top];
-	i = ps->a.top;
+	tmp = (int *)malloc(sizeof(int) * count);
+	i = -1;
+	while (++i < count)
+		tmp[i] = ps->a.stack[ps->a.top - count + 1 + i];
+	i = ps->a.top - count + 1;
 	while (--i >= 0)
-		ps->a.stack[i + 1] = ps->a.stack[i];
-	ps->a.stack[0] = tmp;
+		ps->a.stack[i + count] = ps->a.stack[i];
+	i = -1;
+	while (++i < count)
+		ps->a.stack[i] = tmp[i];
+	free(tmp);
+	tmp = NULL;
 	if (prints_func)
-		println((char *)__func__);
+		while (count--)
+			println((char *)__func__);
 	return (true);
 }
 
-bool	rb(t_push_swap *ps, bool prints_func)
+bool	rb(t_push_swap *ps, int count, bool prints_func)
 {
 	int	i;
-	int	tmp;
+	int	*tmp;
 
 	if (ps->b.top < 0)
 		return (false);
-	tmp = ps->b.stack[ps->b.top];
-	i = ps->b.top;
+	tmp = (int *)malloc(sizeof(int) * count);
+	i = -1;
+	while (++i < count)
+		tmp[i] = ps->b.stack[ps->b.top - count + 1 + i];
+	i = ps->b.top - count + 1;
 	while (--i >= 0)
-		ps->b.stack[i + 1] = ps->b.stack[i];
-	ps->b.stack[0] = tmp;
+		ps->b.stack[i + count] = ps->b.stack[i];
+	i = -1;
+	while (++i < count)
+		ps->b.stack[i] = tmp[i];
+	free(tmp);
+	tmp = NULL;
 	if (prints_func)
-		println((char *)__func__);
+		while (count--)
+			println((char *)__func__);
 	return (true);
 }
 
-bool	rr(t_push_swap *ps)
+bool	rr(t_push_swap *ps, int count)
 {
 	if (ps->a.top < 0 || ps->b.top < 0)
 		return (false);
-	ra(ps, false);
-	rb(ps, false);
+	ra(ps, count, false);
+	rb(ps, count, false);
 	println((char *)__func__);
 	return (true);
 }

@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 03:08:30 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 04:22:22 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,9 +98,9 @@ bool	pb(t_push_swap *ps);
 /*
 ** rotate.c
 */
-bool	ra(t_push_swap *ps, bool prints_func);
-bool	rb(t_push_swap *ps, bool prints_func);
-bool	rr(t_push_swap *ps);
+bool	ra(t_push_swap *ps, int count, bool prints_func);
+bool	rb(t_push_swap *ps, int count, bool prints_func);
+bool	rr(t_push_swap *ps, int count);
 /*
 ** reverse_rotate.c
 */
