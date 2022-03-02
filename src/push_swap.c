@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:53:45 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/01 17:05:36 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 03:27:03 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,4 +96,5 @@ void	push_swap(int count, char **nums, bool one_string)
 		b_to_a(&ps);
 		send_1_to_top(&ps);
 	}
+	quit_push_swap(&ps, NULL);
 }
