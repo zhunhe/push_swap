@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:53:45 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 04:22:06 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 04:27:31 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,8 @@ void	send_1_to_top(t_push_swap *ps)
 		cnt = ps->a.top - idx;
 	else
 		cnt = -(idx + 1);
-	while (cnt > 0)
-	{
-		ra(ps, 1, true);
-		cnt--;
-	}
+	if (cnt > 0)
+		ra(ps, cnt, true);
 	while (cnt < 0)
 	{
 		rra(ps, true);
