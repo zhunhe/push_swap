@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 11:49:50 by juhur             #+#    #+#             */
-/*   Updated: 2022/02/28 18:43:29 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 02:46:57 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	get_len(int *array, int max)
 	return (idx);
 }
 
-static void	set_lis_data(t_push_swap *ps)
+static int	get_max_idx(t_push_swap *ps)
 {
 	int	i;
 	int	idx;
@@ -40,15 +40,26 @@ static void	set_lis_data(t_push_swap *ps)
 	max = 0;
 	while (++i < ps->count)
 	{
-		if (ps->lis.nums[i] > max)
+		if (ps->lis.to_b[i] > max)
 		{
-			max = ps->lis.nums[i];
+			max = ps->lis.to_b[i];
 			idx = i;
 		}
 	}
+	return (idx);
+}
+
+static void	set_lis_data(t_push_swap *ps)
+{
+	int	idx;
+
+	idx = get_max_idx(ps);
 	ps->lis.len = get_len(ps->tmp[idx], ps->count);
-	deep_copy(ps->lis.nums, ps->tmp[idx], ps->lis.len);
-	reverse(ps->lis.nums, ps->lis.len);
+	set_zero(ps->lis.to_b, ps->count);
+	for (int i = 0; i < ps->lis.len; i++)
+		ps->lis.to_b[ps->tmp[idx][i] - 1]++;
+	for (int i = 0; i < ps->count; i++)
+		ps->lis.to_b[i] ^= 1;
 	ps->lis.to_b_count = ps->count - ps->lis.len;
 }
 
@@ -60,16 +71,16 @@ void	lis(t_push_swap *ps)
 	i = -1;
 	while (++i < ps->count)
 	{
-		ps->lis.nums[i] = 1;
+		ps->lis.to_b[i] = 1;
 		set_zero(ps->tmp[i], ps->count);
 		j = -1;
 		while (++j < i)
 		{
 			if (ps->a.stack[j] <= ps->a.stack[i])
 				continue ;
-			if (ps->lis.nums[j] + 1 > ps->lis.nums[i])
+			if (ps->lis.to_b[j] + 1 > ps->lis.to_b[i])
 			{
-				ps->lis.nums[i] = ps->lis.nums[j] + 1;
+				ps->lis.to_b[i] = ps->lis.to_b[j] + 1;
 				deep_copy(ps->tmp[i], ps->tmp[j], ps->count);
 			}
 		}

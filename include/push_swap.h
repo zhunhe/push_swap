@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/01 17:37:24 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 02:41:24 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_stack
 
 typedef struct s_lis
 {
-	int	*nums;
+	int	*to_b;
 	int	len;
 	int	to_b_count;
 }	t_lis;
