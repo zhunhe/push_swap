@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 11:49:50 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 02:59:35 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 03:04:37 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,14 @@ static int	get_max_idx(t_push_swap *ps)
 
 static void	set_lis_data(t_push_swap *ps)
 {
+	int	i;
 	int	idx;
 
 	idx = get_max_idx(ps);
 	ps->lis.len = get_len(ps->tmp[idx], ps->count);
 	fill_n(ps->lis.to_b, ps->count, 1);
-	for (int i = 0; i < ps->lis.len; i++)
+	i = -1;
+	while (++i < ps->lis.len)
 		ps->lis.to_b[ps->tmp[idx][i] - 1] = 0;
 	ps->lis.to_b_count = ps->count - ps->lis.len;
 }
