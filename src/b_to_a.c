@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:41:09 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 02:55:55 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 03:21:42 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,9 @@ static void	move_to_a(t_push_swap *ps)
 	i = ps->b.top + 1;
 	while (--i >= 0)
 	{
-		if (ps->b.stack[i] < min_val)
+		if (ps->tmp[i][COUNT] < min_val)
 		{
-			min_val = ps->b.stack[i];
+			min_val = ps->tmp[i][COUNT];
 			idx = i;
 		}
 	}
