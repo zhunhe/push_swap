@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:41:09 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 13:04:00 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 16:42:37 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,18 +86,18 @@ static void	move_to_a(t_push_swap *ps)
 			idx = i;
 		}
 	}
-	while (ps->tmp[idx][RR]-- > 0)
-		rr(ps, 1);
-	while (ps->tmp[idx][RRR]-- > 0)
-		rrr(ps);
-	if (ps->tmp[idx][RA] > 0)
-		ra(ps, ps->tmp[idx][RA], true);
-	while (ps->tmp[idx][RRA]-- > 0)
-		rra(ps, true);
-	if (ps->tmp[idx][RB] > 0)
-		rb(ps, ps->tmp[idx][RB], true);
-	while (ps->tmp[idx][RRB]-- > 0)
-		rrb(ps, true);
+	if (ps->tmp[i][RR] > 0)
+		rr(ps, ps->tmp[i][RR]);
+	if (ps->tmp[i][RA] > 0)
+		ra(ps, ps->tmp[i][RA], true);
+	if (ps->tmp[i][RB] > 0)
+		rb(ps, ps->tmp[i][RB], true);
+	if (ps->tmp[i][RRR] > 0)
+		rrr(ps, ps->tmp[i][RRR]);
+	if (ps->tmp[i][RRA] > 0)
+		rra(ps, ps->tmp[i][RRA], true);
+	if (ps->tmp[i][RRB] > 0)
+		rrb(ps, ps->tmp[i][RRB], true);
 	pa(ps);
 }
 

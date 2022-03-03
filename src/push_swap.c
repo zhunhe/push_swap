@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:53:45 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 04:27:31 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 16:27:22 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	align(t_push_swap *ps)
 	if (ps->a.stack[ps->a.top] == ps->count)
 		ra(ps, 1, true);
 	else if (ps->a.stack[1] == ps->count)
-		rra(ps, true);
+		rra(ps, 1, true);
 	if (ps->a.stack[ps->a.top] == ps->a.stack[ps->a.top - 1] + 1)
 		sa(ps, true);
 }
@@ -65,11 +65,8 @@ void	send_1_to_top(t_push_swap *ps)
 		cnt = -(idx + 1);
 	if (cnt > 0)
 		ra(ps, cnt, true);
-	while (cnt < 0)
-	{
-		rra(ps, true);
-		cnt++;
-	}
+	if (cnt < 0)
+		rra(ps, -cnt, true);
 }
 
 void	push_swap(int count, char **nums, bool one_string)
