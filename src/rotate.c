@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 17:46:44 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 15:23:30 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 15:28:40 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ bool	ra(t_push_swap *ps, int count, bool prints_func)
 	if (ps->a.top < 0)
 		return (false);
 	tmp = (int *)malloc(sizeof(int) * count);
+	if (tmp == NULL)
+		quit_push_swap(ps, ERROR);
 	i = -1;
 	while (++i < count)
 		tmp[i] = ps->a.stack[ps->a.top - count + 1 + i];
@@ -46,6 +48,8 @@ bool	rb(t_push_swap *ps, int count, bool prints_func)
 	if (ps->b.top < 0)
 		return (false);
 	tmp = (int *)malloc(sizeof(int) * count);
+	if (tmp == NULL)
+		quit_push_swap(ps, ERROR);
 	i = -1;
 	while (++i < count)
 		tmp[i] = ps->b.stack[ps->b.top - count + 1 + i];
