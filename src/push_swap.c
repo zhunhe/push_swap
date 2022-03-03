@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:53:45 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 16:27:22 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 20:39:40 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	align(t_push_swap *ps)
 		sa(ps, true);
 }
 
-int	count_word(char *s)
+static int	count_word(char *s)
 {
 	int	word_cnt;
 	int	i;
