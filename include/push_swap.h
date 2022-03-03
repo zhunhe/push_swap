@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 04:22:22 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 12:37:44 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,9 @@ typedef struct s_push_swap
 # define RR	1
 # define RA	2
 # define RB	3
+# define RRR	4
+# define RRA	5
+# define RRB	6
 
 /*
 ** push_swap.c
