@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 17:01:04 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 20:48:55 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,26 +89,26 @@ void	lis(t_push_swap *ps);
 /*
 ** swap.c
 */
-bool	sa(t_push_swap *ps, bool prints_func);
-bool	sb(t_push_swap *ps, bool prints_func);
-bool	ss(t_push_swap *ps);
+void	sa(t_push_swap *ps, bool prints_func);
+void	sb(t_push_swap *ps, bool prints_func);
+void	ss(t_push_swap *ps);
 /*
 ** push.c
 */
-bool	pa(t_push_swap *ps);
-bool	pb(t_push_swap *ps);
+void	pa(t_push_swap *ps);
+void	pb(t_push_swap *ps);
 /*
 ** rotate.c
 */
-bool	ra(t_push_swap *ps, int count, bool prints_func);
-bool	rb(t_push_swap *ps, int count, bool prints_func);
-bool	rr(t_push_swap *ps, int count);
+void	ra(t_push_swap *ps, int count, bool prints_func);
+void	rb(t_push_swap *ps, int count, bool prints_func);
+void	rr(t_push_swap *ps, int count);
 /*
 ** reverse_rotate.c
 */
-bool	rra(t_push_swap *ps, int count, bool prints_func);
-bool	rrb(t_push_swap *ps, int count, bool prints_func);
-bool	rrr(t_push_swap *ps, int count);
+void	rra(t_push_swap *ps, int count, bool prints_func);
+void	rrb(t_push_swap *ps, int count, bool prints_func);
+void	rrr(t_push_swap *ps, int count);
 /*
 ** ft_split.c
 */

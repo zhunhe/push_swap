@@ -6,19 +6,19 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 18:11:17 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 16:39:00 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 20:46:55 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "push_swap.h"
 
-bool	rra(t_push_swap *ps, int count, bool prints_func)
+void	rra(t_push_swap *ps, int count, bool prints_func)
 {
 	int	*tmp;
 
 	if (ps->a.top < 0)
-		return (false);
+		return ;
 	tmp = (int *)malloc(sizeof(int) * count);
 	if (tmp == NULL)
 		quit_push_swap(ps, ERROR);
@@ -30,15 +30,14 @@ bool	rra(t_push_swap *ps, int count, bool prints_func)
 	if (prints_func)
 		while (count--)
 			println((char *)__func__);
-	return (true);
 }
 
-bool	rrb(t_push_swap *ps, int count, bool prints_func)
+void	rrb(t_push_swap *ps, int count, bool prints_func)
 {
 	int	*tmp;
 
 	if (ps->b.top < 0)
-		return (false);
+		return ;
 	tmp = (int *)malloc(sizeof(int) * count);
 	if (tmp == NULL)
 		quit_push_swap(ps, ERROR);
@@ -50,16 +49,14 @@ bool	rrb(t_push_swap *ps, int count, bool prints_func)
 	if (prints_func)
 		while (count--)
 			println((char *)__func__);
-	return (true);
 }
 
-bool	rrr(t_push_swap *ps, int count)
+void	rrr(t_push_swap *ps, int count)
 {
 	if (ps->a.top < 0 || ps->b.top < 0)
-		return (false);
+		return ;
 	rra(ps, count, false);
 	rrb(ps, count, false);
 	while (count--)
 		println((char *)__func__);
-	return (true);
 }
