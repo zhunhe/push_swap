@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 16:25:19 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 17:01:04 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void	println(char *s);
 */
 int		min(int a, int b);
 int		max(int a, int b);
-int		abs(int val);
 void	fill_n(int *array, int len, int val);
 /*
 ** init.c

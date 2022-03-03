@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:42:09 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 02:55:05 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 17:00:57 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,6 @@ int	max(int a, int b)
 	if (a > b)
 		return (a);
 	return (b);
-}
-
-int	abs(int val)
-{
-	if (val < 0)
-		return (-val);
-	return (val);
 }
 
 void	fill_n(int *array, int len, int val)
