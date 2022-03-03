@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 17:46:44 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 04:01:17 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/03 15:23:30 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ bool	rr(t_push_swap *ps, int count)
 		return (false);
 	ra(ps, count, false);
 	rb(ps, count, false);
-	println((char *)__func__);
+	while (count--)
+		println((char *)__func__);
 	return (true);
 }
