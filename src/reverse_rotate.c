@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 18:11:17 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 20:46:55 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/04 09:37:01 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ void	rra(t_push_swap *ps, int count, bool prints_func)
 
 	if (ps->a.top < 0)
 		return ;
-	tmp = (int *)malloc(sizeof(int) * count);
-	if (tmp == NULL)
-		quit_push_swap(ps, ERROR);
+	tmp = ft_calloc(ps, sizeof(int), count);
 	deep_copy(tmp, ps->a.stack, count);
 	deep_copy(ps->a.stack, ps->a.stack + count, ps->a.top + 1 - count);
 	deep_copy(ps->a.stack + ps->a.top - count + 1, tmp, count);
@@ -38,9 +36,7 @@ void	rrb(t_push_swap *ps, int count, bool prints_func)
 
 	if (ps->b.top < 0)
 		return ;
-	tmp = (int *)malloc(sizeof(int) * count);
-	if (tmp == NULL)
-		quit_push_swap(ps, ERROR);
+	tmp = ft_calloc(ps, sizeof(int), count);
 	deep_copy(tmp, ps->b.stack, count);
 	deep_copy(ps->b.stack, ps->b.stack + count, ps->b.top + 1 - count);
 	deep_copy(ps->b.stack + ps->b.top - count + 1, tmp, count);
