@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:41:09 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 16:56:32 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/06 19:45:07 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,18 +111,12 @@ void	b_to_a(t_push_swap *ps)
 	{
 		set_move_data(ps);
 		array = get_array(ps);
-		if (array[RR] > 0)
-			rr(ps, array[RR]);
-		if (array[RA] > 0)
-			ra(ps, array[RA], true);
-		if (array[RB] > 0)
-			rb(ps, array[RB], true);
-		if (array[RRR] > 0)
-			rrr(ps, array[RRR]);
-		if (array[RRA] > 0)
-			rra(ps, array[RRA], true);
-		if (array[RRB] > 0)
-			rrb(ps, array[RRB], true);
+		rr(ps, array[RR]);
+		ra(ps, array[RA], true);
+		rb(ps, array[RB], true);
+		rrr(ps, array[RRR]);
+		rra(ps, array[RRA], true);
+		rrb(ps, array[RRB], true);
 		pa(ps);
 	}
 }

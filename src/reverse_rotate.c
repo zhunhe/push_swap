@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 18:11:17 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/04 09:37:01 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/06 19:44:23 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	rra(t_push_swap *ps, int count, bool prints_func)
 {
 	int	*tmp;
 
-	if (ps->a.top < 0)
+	if (ps->a.top < 0 || count == 0)
 		return ;
 	tmp = ft_calloc(ps, sizeof(int), count);
 	deep_copy(tmp, ps->a.stack, count);
@@ -34,7 +34,7 @@ void	rrb(t_push_swap *ps, int count, bool prints_func)
 {
 	int	*tmp;
 
-	if (ps->b.top < 0)
+	if (ps->b.top < 0 || count == 0)
 		return ;
 	tmp = ft_calloc(ps, sizeof(int), count);
 	deep_copy(tmp, ps->b.stack, count);
@@ -49,7 +49,7 @@ void	rrb(t_push_swap *ps, int count, bool prints_func)
 
 void	rrr(t_push_swap *ps, int count)
 {
-	if (ps->a.top < 0 || ps->b.top < 0)
+	if (ps->a.top < 0 || ps->b.top < 0 || count == 0)
 		return ;
 	rra(ps, count, false);
 	rrb(ps, count, false);
