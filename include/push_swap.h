@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/06 17:54:28 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/06 22:12:12 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ void	rra(t_push_swap *ps, int count, bool prints_func);
 void	rrb(t_push_swap *ps, int count, bool prints_func);
 void	rrr(t_push_swap *ps, int count);
 /*
-** ft_split.c
+** split.c
 */
 int		count_word(char *s);
 void	split(t_push_swap *ps, int argc, char **argv);
