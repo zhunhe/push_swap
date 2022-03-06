@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 23:58:39 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/04 09:45:35 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/06 19:40:02 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,48 +23,44 @@ static int	get_word_len(char const *s, char c)
 	return (w_len);
 }
 
-static void	ft_split_free(char **ret, int i)
+int	count_word(char *s)
 {
-	while (i >= 0)
-	{
-		free(ret[i]);
-		ret[i] = NULL;
-		--i;
-	}
-	free(ret);
-	ret = NULL;
-	quit_push_swap(NULL, ERROR);
+	int	word_cnt;
+	int	i;
+
+	word_cnt = 0;
+	i = -1;
+	while (s[++i] != '\0')
+		if ((i == 0 || s[i - 1] == ' ') && s[i] != ' ')
+			++word_cnt;
+	return (word_cnt);
 }
 
-/*
-** Allocates (with malloc(3)) and returns an array of strings obtained
-** by splitting ’s’ using the character ’c’ as a delimiter.
-** The array must be ended by a NULL pointer.
-*/
-char	**ft_split(char const *s, int w_cnt)
+void	split(t_push_swap *ps, int argc, char **argv)
 {
-	char	**ret;
-	int		i;
-	int		j;
-	int		w_len;
+	int	idx;
+	int	i;
+	int	j;
+	int	w_cnt;
+	int	w_len;
 
-	if (s == NULL)
-		return (NULL);
-	ret = ft_calloc(NULL, sizeof(char *), w_cnt);
-	i = -1;
-	while (++i < w_cnt)
+	idx = 0;
+	i = 0;
+	while (++i < argc)
 	{
-		while (*s != '\0' && *s == ' ')
-			++s;
-		w_len = get_word_len(s, ' ');
-		ret[i] = (char *)malloc(sizeof(char) * (w_len + 1));
-		if (ret[i] == NULL)
-			ft_split_free(ret, i);
-		j = -1;
-		while (++j < w_len)
-			ret[i][j] = *(s++);
-		ret[i][j] = '\0';
-		++s;
+		w_cnt = count_word(argv[i]);
+		while (w_cnt--)
+		{
+			while (*(argv[i]) != '\0' && *argv[i] == ' ')
+				++argv[i];
+			w_len = get_word_len(argv[i], ' ');
+			ps->s[idx] = (char *)malloc(sizeof(char) * (w_len + 1));
+			if (ps->s[idx] == NULL)
+				quit_push_swap(ps, ERROR);
+			j = -1;
+			while (++j < w_len)
+				ps->s[idx][j] = *(argv[i]++);
+			ps->s[idx++][w_len] = '\0';
+		}
 	}
-	return (ret);
 }

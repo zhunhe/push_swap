@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/04 09:31:32 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/06 17:54:28 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_lis
 
 typedef struct s_push_swap
 {
+	char	**s;
 	int		count;
 	int		**nums;
 	int		**tmp;
@@ -54,7 +55,7 @@ typedef struct s_push_swap
 ** push_swap.c
 */
 bool	is_sorted(t_push_swap *ps);
-void	push_swap(int count, char **nums, bool one_string);
+void	push_swap(int count, char **nums);
 /*
 ** utils.c
 */
@@ -113,7 +114,8 @@ void	rrr(t_push_swap *ps, int count);
 /*
 ** ft_split.c
 */
-char	**ft_split(char const *s, int w_cnt);
+int		count_word(char *s);
+void	split(t_push_swap *ps, int argc, char **argv);
 /*
 ** a_to_b.c
 */

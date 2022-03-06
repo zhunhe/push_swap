@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:53:45 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 20:39:40 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/06 19:38:09 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,6 @@ static void	align(t_push_swap *ps)
 		sa(ps, true);
 }
 
-static int	count_word(char *s)
-{
-	int	word_cnt;
-	int	i;
-
-	word_cnt = 0;
-	i = -1;
-	while (s[++i] != '\0')
-		if ((i == 0 || s[i - 1] == ' ') && s[i] != ' ')
-			++word_cnt;
-	return (word_cnt);
-}
-
 void	send_1_to_top(t_push_swap *ps)
 {
 	int	i;
@@ -69,19 +56,29 @@ void	send_1_to_top(t_push_swap *ps)
 		rra(ps, -cnt, true);
 }
 
-void	push_swap(int count, char **nums, bool one_string)
+static int	count_all_word(int len, char **input)
+{
+	int	ret;
+	int	i;
+
+	ret = 0;
+	i = -1;
+	while (++i < len)
+		ret += count_word(input[i]);
+	return (ret);
+}
+
+void	push_swap(int argc, char **argv)
 {
 	t_push_swap	ps;
+	int			count;
 
-	if (one_string)
-		count = count_word(*nums);
+	count = count_all_word(argc - 1, argv + 1);
 	if (count < 2)
 		return ;
-	nums = ft_split(*nums, count);
 	init_push_swap(&ps, count);
-	to_integer(&ps, nums);
-	if (one_string)
-		free_2d_array((void **)nums, ps.count);
+	split(&ps, argc, argv);
+	to_integer(&ps, ps.s);
 	align(&ps);
 	if (!is_sorted(&ps))
 	{
