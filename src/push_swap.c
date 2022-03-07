@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:53:45 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/06 19:38:09 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/07 20:36:36 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,11 @@ void	push_swap(int argc, char **argv)
 	int			count;
 
 	count = count_all_word(argc - 1, argv + 1);
-	if (count < 2)
-		return ;
 	init_push_swap(&ps, count);
 	split(&ps, argc, argv);
 	to_integer(&ps, ps.s);
 	align(&ps);
-	if (!is_sorted(&ps))
+	if (!is_sorted(&ps) && ps.count > 1)
 	{
 		lis(&ps);
 		a_to_b(&ps);
