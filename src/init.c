@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:11:41 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/06 18:28:14 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/07 20:41:26 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	init_push_swap(t_push_swap *ps, int count)
 	ps->tmp = ft_calloc(ps, sizeof(int *), ps->count);
 	ps->a.stack = ft_calloc(ps, sizeof(int), ps->count);
 	ps->b.stack = ft_calloc(ps, sizeof(int), ps->count);
-	ps->lis.to_b = ft_calloc(ps, sizeof(int), ps->count);
+	ps->lis.to_b = ft_calloc(ps, sizeof(int), (ps->count + 1));
 	i = -1;
 	while (++i < ps->count)
 	{

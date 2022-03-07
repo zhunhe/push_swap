@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 11:49:50 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/03 03:09:03 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/07 20:42:14 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ static void	set_lis_data(t_push_swap *ps)
 
 	idx = get_max_idx(ps);
 	lis_len = get_len(ps->tmp[idx], ps->count);
-	fill_n(ps->lis.to_b, ps->count, 1);
+	fill_n(ps->lis.to_b, ps->count + 1, 1);
 	i = -1;
 	while (++i < lis_len)
-		ps->lis.to_b[ps->tmp[idx][i] - 1] = 0;
+		ps->lis.to_b[ps->tmp[idx][i]] = 0;
 	ps->lis.to_b_count = ps->count - lis_len;
 }
 
