@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:52:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/06 22:12:12 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/11 22:58:15 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	*ft_calloc(t_push_swap *ps, int size, int len);
 /*
 ** init.c
 */
-void	init_push_swap(t_push_swap *ps, int count);
+void	init_push_swap(t_push_swap *ps);
 /*
 ** quit.c
 */

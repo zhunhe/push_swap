@@ -6,18 +6,17 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:11:41 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/07 20:41:26 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/11 22:58:24 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "push_swap.h"
 
-void	init_push_swap(t_push_swap *ps, int count)
+void	init_push_swap(t_push_swap *ps)
 {
 	int	i;
 
-	ps->count = count;
 	ps->s = (char **)malloc(sizeof(char *) * ps->count);
 	if (ps->s == NULL)
 		quit_push_swap(ps, ERROR);

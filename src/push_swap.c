@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:53:45 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/07 20:36:36 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/11 22:58:50 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,9 @@ static int	count_all_word(int len, char **input)
 void	push_swap(int argc, char **argv)
 {
 	t_push_swap	ps;
-	int			count;
 
-	count = count_all_word(argc - 1, argv + 1);
-	init_push_swap(&ps, count);
+	ps.count = count_all_word(argc - 1, argv + 1);
+	init_push_swap(&ps);
 	split(&ps, argc, argv);
 	to_integer(&ps, ps.s);
 	align(&ps);
