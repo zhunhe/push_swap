@@ -6,14 +6,14 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:53:45 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/11 22:58:50 by juhur            ###   ########.fr       */
+/*   Updated: 2022/03/11 22:59:40 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "push_swap.h"
 
-bool	is_sorted(t_push_swap *ps)
+static bool	is_sorted(t_push_swap *ps)
 {
 	int	i;
 
@@ -34,7 +34,7 @@ static void	align(t_push_swap *ps)
 		sa(ps, true);
 }
 
-void	send_1_to_top(t_push_swap *ps)
+static void	send_1_to_top(t_push_swap *ps)
 {
 	int	i;
 	int	idx;
