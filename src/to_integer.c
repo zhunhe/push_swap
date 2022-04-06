@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:23:56 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/01 14:37:58 by juhur            ###   ########.fr       */
+/*   Updated: 2022/04/06 17:12:02 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,8 @@ void	to_integer(t_push_swap *ps, char **nums)
 		ps->nums[i][NUMBER] = ft_atoi(ps, nums[i]);
 		ps->nums[i][ORDER] = i;
 	}
+	if (ps->count == 1)
+		quit_push_swap(ps, NULL);
 	merge_sort(ps, 0, ps->count);
 	check_duplicate(ps);
 	i = -1;
