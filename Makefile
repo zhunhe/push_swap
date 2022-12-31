@@ -6,7 +6,7 @@
 #    By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:09:06 by juhur             #+#    #+#              #
-#    Updated: 2022/12/31 15:52:21 by juhur            ###   ########.fr        #
+#    Updated: 2023/01/01 13:28:15 by juhur            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,19 @@ M_SRCS = $(addprefix $(M_SRC_DIR)/, \
 
 B_SRC_DIR = $(SRC_DIR)/bonus
 B_SRCS = $(addprefix $(B_SRC_DIR)/, \
+	get_next_line_bonus.c \
+	get_next_line_utils_bonus.c \
+	init_bonus.c \
 	main_bonus.c \
+	push_bonus.c \
+	quit_bonus.c \
+	reverse_rotate_bonus.c \
+	rotate_bonus.c \
+	split_bonus.c \
+	swap_bonus.c \
+	to_integer_bonus.c \
+	util_bonus.c \
+	util2_bonus.c \
 )
 
 M_OBJS = $(M_SRCS:.c=.o)
