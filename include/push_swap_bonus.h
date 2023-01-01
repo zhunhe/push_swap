@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 15:11:45 by juhur             #+#    #+#             */
-/*   Updated: 2023/01/01 13:28:04 by juhur            ###   ########.fr       */
+/*   Updated: 2023/01/01 13:45:32 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,5 +126,6 @@ int		max(int a, int b);
 */
 void	deep_copy(int *dst, int *src, int len);
 void	swap(int *a, int *b);
+int		ft_strcmp(const char *s1, const char *s2);
 
 #endif

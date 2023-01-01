@@ -6,12 +6,11 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 15:14:13 by juhur             #+#    #+#             */
-/*   Updated: 2023/01/01 13:40:42 by juhur            ###   ########.fr       */
+/*   Updated: 2023/01/01 13:49:01 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <string.h>
 #include <stdlib.h>
 #include "push_swap_bonus.h"
 
@@ -29,27 +28,27 @@ static int	count_all_word(int len, char **input)
 
 static void	execute(struct s_push_swap_bonus *ps, char *command)
 {
-	if (!strcmp(command, "rr"))
+	if (!ft_strcmp(command, "rr"))
 		rr(ps, 1);
-	else if (!strcmp(command, "ra"))
+	else if (!ft_strcmp(command, "ra"))
 		ra(ps, 1);
-	else if (!strcmp(command, "rb"))
+	else if (!ft_strcmp(command, "rb"))
 		rb(ps, 1);
-	else if (!strcmp(command, "rrr"))
+	else if (!ft_strcmp(command, "rrr"))
 		rrr(ps, 1);
-	else if (!strcmp(command, "rra"))
+	else if (!ft_strcmp(command, "rra"))
 		rra(ps, 1);
-	else if (!strcmp(command, "rrb"))
+	else if (!ft_strcmp(command, "rrb"))
 		rrb(ps, 1);
-	else if (!strcmp(command, "ss"))
+	else if (!ft_strcmp(command, "ss"))
 		ss(ps);
-	else if (!strcmp(command, "sa"))
+	else if (!ft_strcmp(command, "sa"))
 		sa(ps);
-	else if (!strcmp(command, "sb"))
+	else if (!ft_strcmp(command, "sb"))
 		sb(ps);
-	else if (!strcmp(command, "pa"))
+	else if (!ft_strcmp(command, "pa"))
 		pa(ps);
-	else if (!strcmp(command, "pb"))
+	else if (!ft_strcmp(command, "pb"))
 		pb(ps);
 	else
 		quit_push_swap(ps, ERROR);
