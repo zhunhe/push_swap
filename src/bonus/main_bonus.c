@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 15:14:13 by juhur             #+#    #+#             */
-/*   Updated: 2023/01/01 13:29:10 by juhur            ###   ########.fr       */
+/*   Updated: 2023/01/01 13:40:42 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,7 @@ static void	execute(struct s_push_swap_bonus *ps, char *command)
 	else if (!strcmp(command, "pb"))
 		pb(ps);
 	else
-	{
-		free(command);
 		quit_push_swap(ps, ERROR);
-	}
 }
 
 int	main(int argc, char **argv)
