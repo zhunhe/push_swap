@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 15:14:13 by juhur             #+#    #+#             */
-/*   Updated: 2023/01/01 15:03:54 by juhur            ###   ########.fr       */
+/*   Updated: 2023/01/01 15:25:19 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,17 +69,17 @@ static void	process_command(struct s_push_swap_bonus *ps)
 	}
 }
 
-static bool is_sorted(struct s_push_swap_bonus *ps)
+static bool	is_sorted(struct s_push_swap_bonus *ps)
 {
 	int	i;
 
 	if (ps->b.top != -1)
-		return false;
+		return (false);
 	i = -1;
 	while (++i < ps->a.top)
 		if (ps->a.stack[i] < ps->a.stack[i + 1])
-			return false;
-	return true;
+			return (false);
+	return (true);
 }
 
 int	main(int argc, char **argv)
