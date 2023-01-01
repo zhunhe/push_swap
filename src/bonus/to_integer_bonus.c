@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 17:42:34 by juhur             #+#    #+#             */
-/*   Updated: 2022/12/31 17:47:31 by juhur            ###   ########.fr       */
+/*   Updated: 2023/01/01 14:03:33 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void	to_integer(struct s_push_swap_bonus *ps, char **nums)
 		ps->nums[i][ORDER] = i;
 	}
 	if (ps->count == 1)
-		quit_push_swap(ps, NULL);
+		return ;
 	merge_sort(ps, 0, ps->count);
 	check_duplicate(ps);
 	i = -1;

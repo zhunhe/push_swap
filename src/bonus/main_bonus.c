@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 15:14:13 by juhur             #+#    #+#             */
-/*   Updated: 2023/01/01 13:49:01 by juhur            ###   ########.fr       */
+/*   Updated: 2023/01/01 14:05:43 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,27 +54,35 @@ static void	execute(struct s_push_swap_bonus *ps, char *command)
 		quit_push_swap(ps, ERROR);
 }
 
-int	main(int argc, char **argv)
+void	process_command(struct s_push_swap_bonus *ps)
 {
-	struct s_push_swap_bonus	ps;
-	char						*line;
-	int							i;
+	char	*line;
 
-	if (argc == 1)
-		return (0);
-	ps.count = count_all_word(argc - 1, argv + 1);
-	init(&ps);
-	split(&ps, argc, argv);
-	to_integer(&ps, ps.s);
 	while (true)
 	{
 		line = get_next_line(0);
 		if (line == NULL)
 			break ;
-		execute(&ps, line);
+		execute(ps, line);
 		free(line);
 		line = NULL;
 	}
+}
+
+int	main(int argc, char **argv)
+{
+	struct s_push_swap_bonus	ps;
+	int							i;
+
+	if (argc == 1)
+		return (0);
+	ps.count = count_all_word(argc - 1, argv + 1);
+	if (ps.count == 0)
+		quit_push_swap(NULL, ERROR);
+	init(&ps);
+	split(&ps, argc, argv);
+	to_integer(&ps, ps.s);
+	process_command(&ps);
 	i = -1;
 	while (++i < ps.a.top)
 		if (ps.a.stack[i] < ps.a.stack[i + 1])
