@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 15:14:13 by juhur             #+#    #+#             */
-/*   Updated: 2023/01/01 14:05:43 by juhur            ###   ########.fr       */
+/*   Updated: 2023/01/01 14:41:31 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	execute(struct s_push_swap_bonus *ps, char *command)
 		quit_push_swap(ps, ERROR);
 }
 
-void	process_command(struct s_push_swap_bonus *ps)
+static void	process_command(struct s_push_swap_bonus *ps)
 {
 	char	*line;
 
