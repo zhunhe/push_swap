@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 17:42:34 by juhur             #+#    #+#             */
-/*   Updated: 2023/01/01 14:03:33 by juhur            ###   ########.fr       */
+/*   Updated: 2023/01/01 14:25:40 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_atoi(struct s_push_swap_bonus *ps, const char *s)
 	{
 		if (*s < '0' || *s > '9')
 			quit_push_swap(ps, ERROR);
-		ret = ret * 10 + *s - '0';
+		ret = ret * 10 + (*s - '0');
 		if (sign * ret > INT_MAX || sign * ret < INT_MIN)
 			quit_push_swap(ps, ERROR);
 		++s;
