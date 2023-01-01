@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 15:14:13 by juhur             #+#    #+#             */
-/*   Updated: 2023/01/01 14:41:31 by juhur            ###   ########.fr       */
+/*   Updated: 2023/01/01 15:03:54 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,22 @@ static void	process_command(struct s_push_swap_bonus *ps)
 	}
 }
 
+static bool is_sorted(struct s_push_swap_bonus *ps)
+{
+	int	i;
+
+	if (ps->b.top != -1)
+		return false;
+	i = -1;
+	while (++i < ps->a.top)
+		if (ps->a.stack[i] < ps->a.stack[i + 1])
+			return false;
+	return true;
+}
+
 int	main(int argc, char **argv)
 {
 	struct s_push_swap_bonus	ps;
-	int							i;
 
 	if (argc == 1)
 		return (0);
@@ -83,10 +95,9 @@ int	main(int argc, char **argv)
 	split(&ps, argc, argv);
 	to_integer(&ps, ps.s);
 	process_command(&ps);
-	i = -1;
-	while (++i < ps.a.top)
-		if (ps.a.stack[i] < ps.a.stack[i + 1])
-			quit_push_swap(&ps, KO);
-	write(1, OK, ft_strlen(OK));
+	if (is_sorted(&ps))
+		write(1, OK, ft_strlen(OK));
+	else
+		write(1, KO, ft_strlen(KO));
 	return (0);
 }
