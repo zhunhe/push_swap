@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 15:21:18 by juhur             #+#    #+#             */
-/*   Updated: 2022/12/31 18:37:48 by juhur            ###   ########.fr       */
+/*   Updated: 2023/01/01 15:05:14 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	sb(struct s_push_swap_bonus *ps)
 
 void	ss(struct s_push_swap_bonus *ps)
 {
-	if (ps->a.top < 1 || ps->b.top < 1)
-		return ;
 	sb(ps);
 	sa(ps);
 }

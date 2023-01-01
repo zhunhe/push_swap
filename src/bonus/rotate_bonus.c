@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 17:46:44 by juhur             #+#    #+#             */
-/*   Updated: 2022/12/31 18:37:37 by juhur            ###   ########.fr       */
+/*   Updated: 2023/01/01 15:04:59 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	rb(struct s_push_swap_bonus *ps, int count)
 
 void	rr(struct s_push_swap_bonus *ps, int count)
 {
-	if (ps->a.top < 0 || ps->b.top < 0 || count == 0)
+	if (count == 0)
 		return ;
 	ra(ps, count);
 	rb(ps, count);
