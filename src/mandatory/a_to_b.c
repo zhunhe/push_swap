@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 17:02:43 by juhur             #+#    #+#             */
-/*   Updated: 2022/03/07 20:42:22 by juhur            ###   ########.fr       */
+/*   Updated: 2023/01/01 13:33:06 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	a_to_b(t_push_swap *ps)
 		{
 			pb(ps);
 			--ps->lis.to_b_count;
+			if (ps->count > 100 && ps->b.stack[ps->b.top] > ps->count / 2)
+				rb(ps, 1, true);
 		}
 		else
 			ra(ps, 1, true);
